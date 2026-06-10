@@ -1,0 +1,22 @@
+[submodule "nanousd"]
+	path = nanousd
+	url = ../nanousd.git
+[submodule "nanousdview"]
+	path = nanousdview
+	url = ../nanousdview.git
+	branch = main
+[submodule "nanousd-vulkan-renderer"]
+	path = nanousd-vulkan-renderer
+	url = ../nanousd-vulkan-renderer.git
+[submodule "nanousd-metal-renderer"]
+	path = nanousd-metal-renderer
+	url = ../nanousd-metal-renderer.git
+[submodule "nanousd-opengl-renderer"]
+	path = nanousd-opengl-renderer
+	url = ../nanousd-opengl-renderer.git
+[submodule "nanousd-python"]
+	path = nanousd-python
+	url = ../nanousd-python.git
+[submodule "usd-developer-skillgraph"]
+	path = usd-developer-skillgraph
+	url = ../usd-developer-skillgraph.git
