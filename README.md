@@ -10,15 +10,25 @@ Your existing OpenUSD stack keeps working untouched — use what fits, file what
 
 > **Experimental.** Pre-1.0, no stability or support guarantees. Each repo's own README carries its current status and gaps.
 
+## Get the fleet
+
+Every repo in the fleet is a submodule of this umbrella, wired with relative URLs — clone recursively so they come down with it:
+
+```bash
+git clone --recurse-submodules https://github.com/NVIDIA-Omniverse/nanousd-labs.git
+# already cloned without --recurse-submodules:
+git submodule update --init --recursive
+```
+
 ## Start here: the skill graph
 
-**[`usd-developer-skillgraph`](usd-developer-skillgraph/) is the heart of the fleet** — the library of skills, prompts, contracts, and goldens, pinned to the USD Core Spec, that an agent walks to generate USD library code in a target language. Everything else in the fleet is where that method gets exercised; the skill graph is the durable deliverable.
+**[`usd-developer-skillgraph`](https://github.com/NVIDIA-Omniverse/usd-developer-skillgraph) is the heart of the fleet** — the library of skills, prompts, contracts, and goldens, pinned to the USD Core Spec, that an agent walks to generate USD library code in a target language. Everything else in the fleet is where that method gets exercised; the skill graph is the durable deliverable.
 
-For what the graph generates today and how the method actually works, see its **[README](usd-developer-skillgraph/)** and **[tutorial](usd-developer-skillgraph/docs/tutorial/)** — this umbrella points there rather than restating it, so the detail stays in one place and doesn't drift.
+For what the graph generates today and how the method actually works, see its **[README](https://github.com/NVIDIA-Omniverse/usd-developer-skillgraph)** and **[tutorial](https://github.com/NVIDIA-Omniverse/usd-developer-skillgraph/tree/main/docs/tutorial)** — this umbrella points there rather than restating it, so the detail stays in one place and doesn't drift.
 
 Agents take the mechanical spec-to-implementation work; humans own performance, tradeoffs, and design decisions.
 
-**Today vs. where this is going.** The flagship [`nanousd`](nanousd/) and the renderers were built directly with agents (not regenerated from the graph) and are the most complete part of the fleet. Driving those implementations *from* the skill graph — regenerating them from the spec — is the experiment, and it's earlier along. What the graph generates today versus what's still defined-but-not-generated is laid out honestly in **[Where we are](STATE-OF-THE-FLEET.md)**, refreshed roughly monthly.
+**Today vs. where this is going.** The flagship [`nanousd`](https://github.com/NVIDIA-Omniverse/nanousd) and the renderers were built directly with agents (not regenerated from the graph) and are the most complete part of the fleet. Driving those implementations *from* the skill graph — regenerating them from the spec — is the experiment, and it's earlier along. What the graph generates today versus what's still defined-but-not-generated is laid out honestly in **[Where we are](STATE-OF-THE-FLEET.md)**, refreshed roughly monthly.
 
 ## The fleet
 
@@ -33,20 +43,20 @@ Each is its own repo. The fleet is a **stack** — take as little or as much of 
   usd-developer-skillgraph     ·  the generator
 ```
 
-Take just the core, climb up through a renderer, or run the full viewer — each level includes what's beneath it. Beneath the runnable stack sits the skill graph: the **generator** we're working to make the driver for the whole stack above — see its [README](usd-developer-skillgraph/) for what it generates today and [Where we are](STATE-OF-THE-FLEET.md) for the frontier. Each repo's own README carries its current status, architecture, and gaps.
+Take just the core, climb up through a renderer, or run the full viewer — each level includes what's beneath it. Beneath the runnable stack sits the skill graph: the **generator** we're working to make the driver for the whole stack above — see its [README](https://github.com/NVIDIA-Omniverse/usd-developer-skillgraph) for what it generates today and [Where we are](STATE-OF-THE-FLEET.md) for the frontier. Each repo's own README carries its current status, architecture, and gaps.
 
 **Heart — the method**
 
 | Repo | Role |
 |---|---|
-| [`usd-developer-skillgraph`](usd-developer-skillgraph/) | The skill graph that generates USD code from the USD Core Spec. **Start here.** |
+| [`usd-developer-skillgraph`](https://github.com/NVIDIA-Omniverse/usd-developer-skillgraph) | The skill graph that generates USD code from the USD Core Spec. **Start here.** |
 
 **Flagship & bindings**
 
 | Repo | Role |
 |---|---|
-| [`nanousd`](nanousd/) | The flagship — a portable C-ABI implementation of the Core Spec. |
-| [`nanousd-python`](nanousd-python/) | Python bindings to the nanousd C ABI. |
+| [`nanousd`](https://github.com/NVIDIA-Omniverse/nanousd) | The flagship — a portable C-ABI implementation of the Core Spec. |
+| [`nanousd-python`](https://github.com/NVIDIA-Omniverse/nanousd-python) | Python bindings to the nanousd C ABI. |
 
 **Stacks & integrations**
 
@@ -54,10 +64,10 @@ Tools generated around the implementation, plus external projects integrated wit
 
 | Project | Role |
 |---|---|
-| [`nanousdview`](nanousdview/) | Backend-agnostic viewer / stage inspection over the C ABI. |
-| [`nanousd-vulkan-renderer`](nanousd-vulkan-renderer/) | Vulkan renderer backend. |
-| [`nanousd-metal-renderer`](nanousd-metal-renderer/) | Metal renderer backend (Apple platforms). |
-| [`nanousd-opengl-renderer`](nanousd-opengl-renderer/) | OpenGL renderer backend. |
+| [`nanousdview`](https://github.com/NVIDIA-Omniverse/nanousdview) | Backend-agnostic viewer / stage inspection over the C ABI. |
+| [`nanousd-vulkan-renderer`](https://github.com/NVIDIA-Omniverse/nanousd-vulkan-renderer) | Vulkan renderer backend. |
+| [`nanousd-metal-renderer`](https://github.com/NVIDIA-Omniverse/nanousd-metal-renderer) | Metal renderer backend (Apple platforms). |
+| [`nanousd-opengl-renderer`](https://github.com/NVIDIA-Omniverse/nanousd-opengl-renderer) | OpenGL renderer backend. |
 | **Newton** | Physics engine; runs on nanousd via the `pxr_compat` shim — public packaging to come. |
 | **MuJoCo** | Physics engine; runs on nanousd via the `pxr_compat` shim — public packaging to come. |
 
@@ -74,11 +84,11 @@ full Isaac Sim warehouse and NVIDIA DSX datacenter scenes.
 
 ## Contributing
 
-Most fleet repos are not accepting contributions; [`usd-developer-skillgraph`](usd-developer-skillgraph/) accepts contributions under a DCO.
+Most fleet repos are not accepting contributions; [`usd-developer-skillgraph`](https://github.com/NVIDIA-Omniverse/usd-developer-skillgraph) accepts contributions under a DCO.
 
 The invitation is to the **way of working**. Highest-leverage ways to engage, and where each lands:
 
-- **Skills, contracts, and goldens** → into [`usd-developer-skillgraph`](usd-developer-skillgraph/); they improve how code is generated and define what "correct" means.
+- **Skills, contracts, and goldens** → into [`usd-developer-skillgraph`](https://github.com/NVIDIA-Omniverse/usd-developer-skillgraph); they improve how code is generated and define what "correct" means.
 - **Spec-ambiguity reports** → filed as issues on the [AOUSD specifications-public repo](https://github.com/aousd/specifications-public); a fix to the spec benefits every implementation.
 - **Your own implementations and stacks** → generated from the skill graph in your repos; the skills you write to get there are what come back here.
 

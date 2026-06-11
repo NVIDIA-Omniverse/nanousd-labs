@@ -7,7 +7,7 @@ issue](../../issues).
 > **Where this sits, and how it stays true.** The [umbrella README](README.md)
 > says where to start. [**Where we are**](STATE-OF-THE-FLEET.md) says what works
 > today, where it's going, and the gaps between. The
-> [skill-graph quickstart](usd-developer-skillgraph/) lets you run the method
+> [skill-graph quickstart](https://github.com/NVIDIA-Omniverse/usd-developer-skillgraph) lets you run the method
 > yourself. **This page is for the *why* and the hard questions** — the durable
 > stuff that doesn't move: why this exists, what it is and isn't, where we stand
 > with OpenUSD and AOUSD, how to engage.
@@ -75,7 +75,7 @@ your feature lands in one of three places:
 
 - **A different layer of this fleet.** Imaging and rendering aren't absent — they
   live *on top* of the data layer. The Vulkan / Metal / OpenGL backends and
-  [`nanousdview`](nanousdview/) are the fleet's imaging layer. So imaging isn't
+  [`nanousdview`](https://github.com/NVIDIA-Omniverse/nanousdview) are the fleet's imaging layer. So imaging isn't
   "use OpenUSD instead"; it's a separate layer that consumes nanousd, and it's in
   the fleet — it just isn't the data layer's job.
 - **A spec capability reached through an OpenUSD-specific mechanism.** Sometimes
@@ -121,7 +121,7 @@ the skill graph regenerates a narrower slice directly from the spec. So:
   state is in [Where we are](STATE-OF-THE-FLEET.md).
 - If you're here for the **experiment** — generating implementations from the
   spec — the skill graph is the part to watch, and the
-  [quickstart](usd-developer-skillgraph/) lets you walk it yourself. The honest
+  [quickstart](https://github.com/NVIDIA-Omniverse/usd-developer-skillgraph) lets you walk it yourself. The honest
   edge of what it generates is documented, not hidden.
 
 Where this is going is the two tracks **converging** — what's built directly
@@ -177,7 +177,7 @@ Atomic features generate well today; **cohesion across many features is the
 frontier**. A single-layer parser working end-to-end through the
 same compliance harness as the flagship is a real result, not the finish line.
 The named gaps are listed openly in [Where we are](STATE-OF-THE-FLEET.md). Want to see the loop
-yourself? The [quickstart](usd-developer-skillgraph/) walks you through the
+yourself? The [quickstart](https://github.com/NVIDIA-Omniverse/usd-developer-skillgraph) walks you through the
 scoring micro-loop by hand against the contracts — the part you can run on a
 fresh checkout in minutes.
 
@@ -198,7 +198,7 @@ unfinished parts so you're not misled into thinking it's done.
 Most fleet repos are **not accepting code contributions** right now: much of the
 implementation is regenerable output, so a hand patch to generated code gets
 overwritten on the next regeneration. The exception is
-[`usd-developer-skillgraph`](usd-developer-skillgraph/), which accepts
+[`usd-developer-skillgraph`](https://github.com/NVIDIA-Omniverse/usd-developer-skillgraph), which accepts
 contributions under a DCO.
 
 ### Then what can I actually contribute?
@@ -207,7 +207,7 @@ The invitation is to the **method**, and the highest-leverage contributions are
 inputs to the code, not patches to it:
 
 - **Skills, contracts, and goldens** → into
-  [`usd-developer-skillgraph`](usd-developer-skillgraph/). These improve how code
+  [`usd-developer-skillgraph`](https://github.com/NVIDIA-Omniverse/usd-developer-skillgraph). These improve how code
   is generated and define what "correct" means. A prose description of an
   uncovered corner case is a real contribution — you don't have to write the
   fixture.
@@ -219,7 +219,7 @@ inputs to the code, not patches to it:
 
 Adopting the generated code is welcome too — but the activation is for people who
 want to write skills, generate their own implementations, and build new stacks.
-The [quickstart](usd-developer-skillgraph/) is the front door to all of this.
+The [quickstart](https://github.com/NVIDIA-Omniverse/usd-developer-skillgraph) is the front door to all of this.
 
 ---
 
